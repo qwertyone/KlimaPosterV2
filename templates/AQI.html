@@ -1,0 +1,9 @@
+{% extends "posterClimate.html" %}
+
+{% block AQI %}
+<div class="w3-threequarter FrameHI">
+<span class="HI--{{ colorAQI }} W3-xxlarge"> 
+{{ currentStateAQI }} {{ tipAQI }} 
+</span>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../static/styles.css">
+<link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	<video poster="../static/{{ noMedia }}.jpg" id="bgvid" playsinline autoplay muted loop>
+  <!-- 
+- Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
+WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="../static/{{ noMedia }}.webm" type="video/webm">
+<source src="../static/{{ noMedia }}.mp4" type="video/mp4">
+
+</video>
+
+<div class="card w3-quarter">
+	<img src="../static/logoKlimaBot.svg">
+<div class="sm">
+	
+<div class="smHI {{ colorHI }}"> 
+{{ tempCurrentC }}{{ arrowHI }}
+</div>
+<a href="/heat"> Heat Index </a>	
+</div>
+<div class="sm">
+	
+<div class="smAQI {{ colorAQI }} "> 
+	{{ resultAQI }}{{ arrowAQI }}
+</div>
+<a href="/AQI">Air Quality </a>	
+</div>
+<div class="sm">
+	
+<div class="smUVI {{ colorUVI }}"> 
+	{{ resultUVI }}
+</div>
+<a href="/UV"> UV Index </a>	
+</div>
+</div>
+
+{% block HI %}
+{% endblock %}
+
+{% block AQI %}
+{% endblock %}
+
+{% block UV %}
+{% endblock %}
+
+</body>
+</html>
